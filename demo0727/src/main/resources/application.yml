@@ -1,0 +1,25 @@
+# 设置端口号，默认 8080
+server:
+  port: 8081
+
+# 设置数据库配置
+spring:
+  datasource:
+     username: root
+     password: langyu51058373
+#serverTimezone=UTC 解决市区的报错，一般是8.0以上需要配置
+#userUnicode=true&characterEncoding=utf-8 指定编码解码
+     url: jdbc:mysql://localhost:3306/demo0727?serverTimezone=UTC&userUnicode=true&characterEncoding=utf-8
+#设置驱动类
+     driver-class-name: com.mysql.jdbc.Driver
+##设置数据源
+#     type: com.alibaba.druid.pool.DruidDataSource
+
+
+# 配置mybatis
+#指定pojo扫描包位置让mybatis自动扫描到指定的pojo包下
+mybatis:
+  type-aliases-package: com.example.demo0727.pojo
+#指定位置扫描Mapper对应接口的XML文件 classpath:xml文件位置
+  mapper-locations: classpath:mapper/*.xml
+
